@@ -4,7 +4,7 @@ Queue-depth-driven autoscaler for Celery worker fleets running on AWS ECS.
 
 Monitors Redis or RabbitMQ queue depths and adjusts ECS service `desiredCount` to match load — scaling out when queues grow and scaling in when they drain.
 
-[![CI](https://github.com/your-org/celery-ecs-autoscaler/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/celery-ecs-autoscaler/actions/workflows/ci.yml)
+[![CI](https://github.com/danwiltshire/celery-ecs-autoscaler/actions/workflows/ci.yml/badge.svg)](https://github.com/danwiltshire/celery-ecs-autoscaler/actions/workflows/ci.yml)
 
 ## Installation
 
