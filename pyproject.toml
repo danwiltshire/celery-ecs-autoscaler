@@ -1,7 +1,7 @@
 [project]
 name = "celery-ecs-autoscaler"
 version = "0.1.0"
-description = "Queue-depth-driven ECS autoscaler for Celery workers"
+description = "A fast ECS autoscaler for Celery workloads."
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
