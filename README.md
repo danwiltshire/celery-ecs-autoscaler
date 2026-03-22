@@ -156,7 +156,7 @@ All scaling decisions are logged as structured JSON to stdout:
 ### Setup
 
 ```bash
-uv sync --group dev
+uv sync
 uv run pre-commit install
 ```
 
