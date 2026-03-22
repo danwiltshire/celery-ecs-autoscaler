@@ -175,14 +175,3 @@ To run manually:
 ```bash
 uv run pre-commit run --all-files
 ```
-
-### Running the example
-
-```bash
-docker compose up --build  # starts Redis + a Celery worker
-python examples/redis_worker/config.py  # dry-run scaler against the local stack
-```
-
-## Licence
-
-MIT

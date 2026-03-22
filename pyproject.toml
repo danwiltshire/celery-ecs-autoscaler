@@ -20,6 +20,7 @@ classifiers = [
 ]
 dependencies = [
     "boto3>=1.28",
+    "celery[redis]>=5.0",
     "redis>=5.0",
 ]
 
@@ -41,7 +42,6 @@ testpaths = ["tests"]
 [dependency-groups]
 dev = [
     "pytest>=8.0",
-    "celery[redis]>=5.0",
     "pre-commit>=4.0",
 ]
 
