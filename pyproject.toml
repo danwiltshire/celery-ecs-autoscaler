@@ -1,6 +1,6 @@
 [project]
 name = "celery-ecs-autoscaler"
-version = "0.1.0"
+version = "1.0.0"
 description = "A fast ECS autoscaler for Celery workloads."
 readme = "README.md"
 license = { text = "MIT" }
