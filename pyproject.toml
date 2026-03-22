@@ -1,0 +1,76 @@
+[project]
+name = "celery-ecs-autoscaler"
+version = "0.1.0"
+description = "Queue-depth-driven ECS autoscaler for Celery workers"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+keywords = ["celery", "ecs", "autoscaler", "aws", "redis", "rabbitmq", "scaling"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: System :: Distributed Computing",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "boto3>=1.28",
+    "redis>=5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-org/celery-ecs-autoscaler"
+Repository = "https://github.com/your-org/celery-ecs-autoscaler"
+Issues = "https://github.com/your-org/celery-ecs-autoscaler/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/celery_ecs_autoscaler"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "celery[redis]>=5.0",
+    "pre-commit>=4.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "N",    # pep8-naming
+    "UP",   # pyupgrade — keep syntax modern
+    "S",    # flake8-bandit — security
+    "B",    # flake8-bugbear
+    "A",    # flake8-builtins — don't shadow builtins
+    "C4",   # flake8-comprehensions
+    "SIM",  # flake8-simplify
+    "G",    # flake8-logging — no f-strings in log calls
+    "PT",   # flake8-pytest-style
+    "RUF",  # Ruff-specific rules
+]
+# S101 (assert) is normal in tests; S311 (random) is fine in non-crypto contexts
+ignore = ["S101", "S311"]
+
+[tool.ruff.lint.per-file-ignores]
+# Bandit is noisy in tests (hardcoded URLs, assert statements, etc.)
+"tests/**/*.py" = ["S"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["celery_ecs_autoscaler"]
