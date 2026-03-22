@@ -174,6 +174,7 @@ To run manually:
 
 ```bash
 uv run pre-commit run --all-files
+
 ```
 
 ### Running the example
